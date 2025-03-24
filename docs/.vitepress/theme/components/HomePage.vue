@@ -37,14 +37,14 @@
                         
                         <!-- 入口按钮 -->
                         <div class="flex items-center justify-center gap-4">
-                            <a href="/esct-intro">
+                            <a href="/esct-intro.html">
                                 <button class="btn-gradient relative px-7 py-2.5 rounded-lg text-base font-medium cursor-pointer whitespace-nowrap overflow-hidden group">
                                     <span class="relative z-10 text-[#6838F0] group-hover:text-white transition-colors duration-300">企业软件成分分类(ESCT)</span>
                                     <span class="absolute inset-0 bg-gradient-to-r from-[#F5F0FF] to-[#EBE3FF] group-hover:opacity-0 transition-opacity duration-300"></span>
                                     <span class="absolute inset-0 bg-gradient-to-r from-[#6838F0] to-[#9B7BF7] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                                 </button>
                             </a>
-                            <a href="/estt-intro">
+                            <a href="/estt-intro.html">
                                 <button class="btn-gradient relative px-7 py-2.5 rounded-lg text-base font-medium cursor-pointer whitespace-nowrap overflow-hidden group">
                                     <span class="relative z-10 text-[#6838F0] group-hover:text-white transition-colors duration-300">企业软件成分威胁分类(ESTT)</span>
                                     <span class="absolute inset-0 bg-gradient-to-r from-[#F5F0FF] to-[#EBE3FF] group-hover:opacity-0 transition-opacity duration-300"></span>
@@ -247,7 +247,7 @@ const contributors = [
     { id: 3, name: '车志远', organization: '墨菲安全' },
     { id: 4, name: '吕硕', organization: '墨菲安全' },
     { id: 5, name: '刁程扬', organization: '墨菲安全' },
-    { id: 6, name: '斯诺', organization: '京东' },
+    { id: 6, name: '胡斯诺', organization: '京东' },
     { id: 7, name: '何为舟', organization: '美团' },
     { id: 8, name: '程岩', organization: '蚂蚁集团' },
 ]
