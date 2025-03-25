@@ -249,7 +249,13 @@ export default defineConfig({
   appearance: false,
   ignoreDeadLinks: true,
 
+  head: [
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/img/oscs.svg' }],
+  ],
+
   themeConfig: {
+    logo: { src: '/img/essf_logo.svg', style: 'height: 35px' },
+    siteTitle: false,
     nav: [
       { text: '成分分类', link: '/esct-intro' },
       { text: '威胁分类', link: '/estt-intro' },
