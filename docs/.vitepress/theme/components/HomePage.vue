@@ -57,7 +57,7 @@
             </div>
         </div>
         <!-- 三大核心问题 -->
-        <div class="py-16 bg-gradient-to-b from-white via-[#F8F7FF] to-white relative overflow-hidden">
+        <div class="py-20 bg-gradient-to-b from-white via-[#F8F7FF] to-white relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-4">
                 <h2 class="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-[#6838F0] to-[#9B7BF7]"
                     style="font-family: 'Inter', sans-serif;">企业软件安全面临的三大核心问题</h2>
@@ -94,19 +94,42 @@
             </div>
         </div>
         <!-- 解决方案示意 -->
-        <div class="py-16 bg-gradient-to-b from-white via-[#F8F7FF] to-white relative overflow-hidden">
+        <div class="py-20 bg-gradient-to-b from-white via-[#F8F7FF] to-white relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-4">
                 <h2 class="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-[#6838F0] to-[#9B7BF7]" style="font-family: 'Inter', sans-serif;">如何解决这些问题</h2>
-                <div class="h-[600px] relative">
-                    <RelationshipChart v-if="isBrowser" :chartData="chartData" />
+                <div class="flex justify-center items-center">
+                    <img 
+                      src="/img/solution.png" 
+                      alt="解决方案示意图" 
+                      class="max-w-full rounded-lg shadow-sm cursor-pointer hover:shadow-md transition-shadow duration-300" 
+                      @click="openImagePreview" 
+                    />
                 </div>
                 <p class="text-gray-600 text-center leading-relaxed max-w-3xl mx-auto mt-8">
                     从企业的业务系统出发，深入到具体的应用，再到构成应用的<strong>软件成分</strong>，最终识别和应对各种<strong>威胁类型</strong>。通过这种层层递进的分析方法，帮助企业从全局视角理解软件安全，并找到有效的治理路径。
                 </p>
             </div>
         </div>
+        
+        <!-- 图片预览层 -->
+        <Teleport to="body" v-if="isBrowser">
+            <div v-if="showImagePreview" class="fixed inset-0 bg-white bg-opacity-100 z-50 flex items-center justify-center" @click="closeImagePreview" @keydown.esc="closeImagePreview" tabindex="0">
+                <div class="max-w-[90vw] max-h-[90vh]">
+                    <img src="/img/solution.png" alt="解决方案示意图" class="max-w-full max-h-[90vh] object-contain" />
+                </div>
+                <button class="absolute top-4 right-4 text-black text-2xl" @click.stop="closeImagePreview">
+                    <i class="i-carbon-close"></i>
+                </button>
+            </div>
+        </Teleport>
+        
+        <!-- 安全量化管理指标体系 -->
+        <div class="py-20">
+          <SecurityIndicators v-if="isBrowser" />
+        </div>
+        
         <!-- 两大标准 -->
-        <div class="py-16 bg-gradient-to-b from-white via-[#F8F7FF] to-white relative overflow-hidden">
+        <div class="py-20 bg-gradient-to-b from-white via-[#F8F7FF] to-white relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-4">
                 <h2 class="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-[#6838F0] to-[#9B7BF7]"
                     style="font-family: 'Inter', sans-serif;">两大核心框架，支撑企业软件安全治理落地</h2>
@@ -193,10 +216,12 @@
 import { ref, onMounted } from 'vue'
 import { chartData } from '../data/chartData'
 import RelationshipChart from './RelationshipChart.vue'
+import SecurityIndicators from './SecurityIndicators.vue'
 
 const problemVisible = ref(false)
 const activeIndex = ref(-1)
 const isBrowser = ref(false)
+const showImagePreview = ref(false)
 
 onMounted(() => {
     setTimeout(() => {
@@ -255,6 +280,14 @@ const contributors = [
 const companies = [
     { id: 1, name: 'xx', logo: '/img/companies/baidu.svg' },
 ]
+
+const openImagePreview = () => {
+    showImagePreview.value = true
+}
+
+const closeImagePreview = () => {
+    showImagePreview.value = false
+}
 </script>
 
 <style>
