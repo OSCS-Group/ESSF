@@ -33,7 +33,19 @@
                             <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#6838F0] to-[#9B7BF7]">ESSF 企业软件安全治理框架</span>
                             <span class="w-8 h-[2px] bg-gradient-to-r from-[#9B7BF7] to-[#6838F0] ml-3"></span>
                         </p>
-                        <p class="text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto text-lg select-text">帮助企业清晰界定软件安全边界、量化评估安全水位，基于量化管理构建可持续的软件安全治理体系，应对日益复杂的软件安全挑战。要定义清楚企业的软件安全，必须说清楚构建所有软件的成分分类及成分对应的威胁场景分类。</p>
+                        <p class="text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto text-lg select-text relative p-4 group">
+                            <span class="relative z-10 block leading-relaxed">帮助全球企业构建一套
+                                <span class="font-medium text-[#6838F0]/80 relative inline-block transform transition-transform duration-300 group-hover:translate-y-[-1px]">可持续可量化管理</span>
+                                的软件安全治理体系框架，基于这个框架企业可以
+                                <span class="font-medium text-[#6838F0]/80 relative inline-block transform transition-transform duration-300 group-hover:translate-y-[-1px]">清晰界定软件安全边界</span>、
+                                <span class="font-medium text-[#6838F0]/80 relative inline-block transform transition-transform duration-300 group-hover:translate-y-[-1px]">高效量化评估企业软件安全水位</span>，
+                                从而帮助企业轻松应对当前 AI 时代日益复杂的软件安全威胁和挑战。ESSF 目前包含
+                                <a href="/esct-intro.html" class="underline decoration-[#6838F0]/30 decoration-2 underline-offset-2 hover:text-[#6838F0] transition-colors duration-300">企业软件成分分类(ESCT)</a>
+                                及
+                                <a href="/estt-intro.html" class="underline decoration-[#6838F0]/30 decoration-2 underline-offset-2 hover:text-[#6838F0] transition-colors duration-300">企业软件成分威胁分类(ESTT)</a>
+                                两个重要组成部分。
+                            </span>
+                        </p>
                         
                         <!-- 入口按钮 -->
                         <div class="flex items-center justify-center gap-4">
@@ -275,6 +287,8 @@ const contributors = [
     { id: 6, name: '胡斯诺', organization: '京东' },
     { id: 7, name: '何为舟', organization: '美团' },
     { id: 8, name: '程岩', organization: '蚂蚁集团' },
+    { id: 9, name: '刘月胜', organization: '小米' },
+    { id: 10, name: '张煜昆', organization: '理想汽车' },
 ]
 
 const companies = [
