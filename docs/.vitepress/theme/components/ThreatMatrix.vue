@@ -30,125 +30,129 @@
         
         <table class="w-full border-collapse text-sm matrix-table" :class="{'max-h-[calc(100vh-120px)]': isFullScreen}">
           <!-- 图例和威胁类型行 -->
-          <tr>
-            <th colspan="2" rowspan="3" class="relative p-4 bg-gray-100 rounded-tl-lg border-2 border-gray-200">
-              <div class="flex flex-col gap-2">
-                <div class="flex items-center gap-2">
-                  <div class="w-5 h-5 bg-gray-100 border border-gray-300 rounded"></div>
-                  <span class="text-gray-600">无威胁</span>
+          <thead>
+            <tr>
+              <th colspan="2" rowspan="3" class="relative p-4 bg-gray-100 rounded-tl-lg border-2 border-gray-200">
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center gap-2">
+                    <div class="w-5 h-5 bg-gray-100 border border-gray-300 rounded"></div>
+                    <span class="text-gray-600">无威胁</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <div class="w-5 h-5 bg-yellow-50 border border-yellow-200 rounded"></div>
+                    <span class="text-yellow-600">潜在威胁</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <div class="w-5 h-5 bg-red-50 border border-red-200 rounded"></div>
+                    <span class="text-red-600">已知威胁</span>
+                  </div>
                 </div>
-                <div class="flex items-center gap-2">
-                  <div class="w-5 h-5 bg-yellow-50 border border-yellow-200 rounded"></div>
-                  <span class="text-yellow-600">潜在威胁</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <div class="w-5 h-5 bg-red-50 border border-red-200 rounded"></div>
-                  <span class="text-red-600">已知威胁</span>
-                </div>
-              </div>
-            </th>
-            <template v-for="(threatObj, mainThreat, mainIndex) in threats" :key="mainThreat">
-              <th 
-                :colspan="getColSpan(threatObj)"
-                class="p-4 bg-gray-100 border-2 border-gray-200 font-semibold text-gray-700 matrix-header"
-                :class="{'border-l-4': mainIndex > 0}">
-                {{ mainThreat }}
               </th>
-            </template>
-          </tr>
-
-          <!-- 子威胁类型行 -->
-          <tr>
-            <template v-for="(threatObj, mainThreat, mainIndex) in threats" :key="mainThreat">
-              <template v-for="(threatList, subThreat, subIndex) in threatObj" :key="subThreat">
+              <template v-for="(threatObj, mainThreat, mainIndex) in threats" :key="mainThreat">
                 <th 
-                  :colspan="threatList.length"
-                  class="p-3 bg-gray-50 border-2 border-gray-200 font-medium text-gray-600 matrix-subheader"
-                  :class="{
-                    'border-l-4': subIndex === 0 && mainIndex > 0
-                  }">
-                  {{ subThreat }}
+                  :colspan="getColSpan(threatObj)"
+                  class="p-4 bg-gray-100 border-2 border-gray-200 font-semibold text-gray-700 matrix-header"
+                  :class="{'border-l-4': mainIndex > 0}">
+                  {{ mainThreat }}
                 </th>
               </template>
-            </template>
-          </tr>
+            </tr>
 
-          <!-- 具体威胁行 -->
-          <tr>
-            <template v-for="(threatObj, mainThreat, mainIndex) in threats" :key="mainThreat">
-              <template v-for="(threatList, subThreat, subIndex) in threatObj" :key="subThreat">
-                <template v-for="(threat, threatIndex) in threatList" :key="threat">
+            <!-- 子威胁类型行 -->
+            <tr>
+              <template v-for="(threatObj, mainThreat, mainIndex) in threats" :key="mainThreat">
+                <template v-for="(threatList, subThreat, subIndex) in threatObj" :key="subThreat">
                   <th 
-                    class="p-2 bg-gray-50 border-2 border-gray-200 text-left threat-header"
+                    :colspan="threatList.length"
+                    class="p-3 bg-gray-50 border-2 border-gray-200 font-medium text-gray-600 matrix-subheader"
                     :class="{
-                      'border-l-4': threatIndex === 0 && subIndex === 0 && mainIndex > 0
+                      'border-l-4': subIndex === 0 && mainIndex > 0
                     }">
-                    <a :href="`/ESTT/${threat.split(' ')[0]}`" 
-                      class="text-gray-600 hover:text-violet-600 hover:underline transition-colors whitespace-nowrap text-sm">
-                      {{ threat }}
-                    </a>
+                    {{ subThreat }}
                   </th>
                 </template>
               </template>
-            </template>
-          </tr>
+            </tr>
 
-          <!-- 资产行和威胁等级单元格 -->
-          <template v-for="(assetList, category, categoryIndex) in assets" :key="category">
-            <tr v-for="(subCategory, index) in assetList" :key="subCategory" 
-              :class="{'border-t-4 border-gray-200': index === 0 && categoryIndex > 0}">
-              <td v-if="index === 0" 
-                  class="border-2 border-gray-200 bg-gray-100 font-semibold text-gray-700 category-cell"
-                  :rowspan="assetList.length"
-                  :class="{'border-t-4 border-gray-200': categoryIndex > 0}">
-                <div class="writing-vertical-rl text-center py-4 px-2">{{ category }}</div>
-              </td>
-              <td class="p-3 border-2 border-gray-200 bg-gray-50 min-w-[150px] font-medium text-gray-600 subcategory-cell">
-                {{ subCategory }}
-              </td>
-              
+            <!-- 具体威胁行 -->
+            <tr>
               <template v-for="(threatObj, mainThreat, mainIndex) in threats" :key="mainThreat">
                 <template v-for="(threatList, subThreat, subIndex) in threatObj" :key="subThreat">
                   <template v-for="(threat, threatIndex) in threatList" :key="threat">
-                    <td 
-                      class="relative p-3 border-2 cursor-pointer hover:bg-opacity-80 threat-cell"
-                      :class="[
-                        getThreatLevelClass(category, subCategory, threat.split(' ')[0]),
-                        {
-                          'border-l-4 border-gray-200': threatIndex === 0 && subIndex === 0 && mainIndex > 0
-                        }
-                      ]"
-                    >
-                      <span class="text-sm font-medium">{{ getThreatLevelText(category, subCategory, threat.split(' ')[0]) }}</span>
-                      
-                      <!-- Tooltip -->
-                      <div class="tooltip-content opacity-0 invisible absolute z-[100] w-[400px] p-4 bg-white rounded-lg shadow-lg border-2 border-gray-200 transition-all duration-200 pointer-events-none"
-                          :class="{'bottom-full mb-2': index > assetList.length - 3, 'top-full mt-2': index <= assetList.length - 3}"
-                          :style="getTooltipStyle(index, assetList.length)">
-                        <div class="text-violet-600 font-semibold border-b border-gray-100 pb-2 mb-3">威胁详情</div>
-                        <div class="space-y-2">
-                          <div class="flex gap-2">
-                            <span class="text-gray-500 min-w-[80px]">成分类型:</span>
-                            <span class="text-gray-700">{{ category }} / {{ subCategory }}</span>
-                          </div>
-                          <div class="flex gap-2">
-                            <span class="text-gray-500 min-w-[80px]">威胁:</span>
-                            <span class="text-gray-700">{{ threat }}</span>
-                          </div>
-                          <div class="flex gap-2">
-                            <span class="text-gray-500 min-w-[80px]">威胁程度:</span>
-                            <span :class="getThreatLevelDetailClass(category, subCategory, threat.split(' ')[0])">
-                              {{ getThreatLevelDetailText(category, subCategory, threat.split(' ')[0]) }}
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
+                    <th 
+                      class="p-2 bg-gray-50 border-2 border-gray-200 text-left threat-header"
+                      :class="{
+                        'border-l-4': threatIndex === 0 && subIndex === 0 && mainIndex > 0
+                      }">
+                      <a :href="`/ESTT/${threat.split(' ')[0]}`" 
+                        class="text-gray-600 hover:text-violet-600 hover:underline transition-colors whitespace-nowrap text-sm">
+                        {{ threat }}
+                      </a>
+                    </th>
                   </template>
                 </template>
               </template>
             </tr>
-          </template>
+          </thead>
+
+          <!-- 资产行和威胁等级单元格 -->
+          <tbody>
+            <template v-for="(assetList, category, categoryIndex) in assets" :key="category">
+              <tr v-for="(subCategory, index) in assetList" :key="subCategory" 
+                :class="{'border-t-4 border-gray-200': index === 0 && categoryIndex > 0}">
+                <td v-if="index === 0" 
+                    class="border-2 border-gray-200 bg-gray-100 font-semibold text-gray-700 category-cell"
+                    :rowspan="assetList.length"
+                    :class="{'border-t-4 border-gray-200': categoryIndex > 0}">
+                  <div class="writing-vertical-rl text-center py-4 px-2">{{ category }}</div>
+                </td>
+                <td class="p-3 border-2 border-gray-200 bg-gray-50 min-w-[150px] font-medium text-gray-600 subcategory-cell">
+                  {{ subCategory }}
+                </td>
+                
+                <template v-for="(threatObj, mainThreat, mainIndex) in threats" :key="mainThreat">
+                  <template v-for="(threatList, subThreat, subIndex) in threatObj" :key="subThreat">
+                    <template v-for="(threat, threatIndex) in threatList" :key="threat">
+                      <td 
+                        class="relative p-3 border-2 cursor-pointer hover:bg-opacity-80 threat-cell"
+                        :class="[
+                          getThreatLevelClass(category, subCategory, threat.split(' ')[0]),
+                          {
+                            'border-l-4 border-gray-200': threatIndex === 0 && subIndex === 0 && mainIndex > 0
+                          }
+                        ]"
+                      >
+                        <span class="text-sm font-medium">{{ getThreatLevelText(category, subCategory, threat.split(' ')[0]) }}</span>
+                        
+                        <!-- Tooltip -->
+                        <div class="tooltip-content opacity-0 invisible absolute z-[100] w-[400px] p-4 bg-white rounded-lg shadow-lg border-2 border-gray-200 transition-all duration-200 pointer-events-none"
+                            :class="{'bottom-full mb-2': index > assetList.length - 3, 'top-full mt-2': index <= assetList.length - 3}"
+                            :style="getTooltipStyle(index, assetList.length)">
+                          <div class="text-violet-600 font-semibold border-b border-gray-100 pb-2 mb-3">威胁详情</div>
+                          <div class="space-y-2">
+                            <div class="flex gap-2">
+                              <span class="text-gray-500 min-w-[80px]">成分类型:</span>
+                              <span class="text-gray-700">{{ category }} / {{ subCategory }}</span>
+                            </div>
+                            <div class="flex gap-2">
+                              <span class="text-gray-500 min-w-[80px]">威胁:</span>
+                              <span class="text-gray-700">{{ threat }}</span>
+                            </div>
+                            <div class="flex gap-2">
+                              <span class="text-gray-500 min-w-[80px]">威胁程度:</span>
+                              <span :class="getThreatLevelDetailClass(category, subCategory, threat.split(' ')[0])">
+                                {{ getThreatLevelDetailText(category, subCategory, threat.split(' ')[0]) }}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </template>
+                  </template>
+                </template>
+              </tr>
+            </template>
+          </tbody>
         </table>
       </div>
     </div>

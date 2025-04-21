@@ -2,7 +2,7 @@
 <template>
     <div class="min-h-screen">
         <!-- Hero区域 -->
-        <div class="relative overflow-hidden bg-gradient-to-b from-white via-[#F8F7FF] to-white">
+        <div class="relative overflow-hidden bg-gradient-to-b">
             <div class="max-w-7xl mx-auto px-4 py-32 text-center relative z-10">
                 <div class="relative">
                     <!-- 装饰线条和动态元素 -->
@@ -69,7 +69,7 @@
             </div>
         </div>
         <!-- 三大核心问题 -->
-        <div class="py-20 bg-gradient-to-b from-white via-[#F8F7FF] to-white relative overflow-hidden">
+        <div class="py-20 bg-gradient-to-b from-white via-[#8e61f70d] to-white relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-4">
                 <h2 class="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-[#6838F0] to-[#9B7BF7]"
                     style="font-family: 'Inter', sans-serif;">企业软件安全面临的三大核心问题</h2>
@@ -106,7 +106,7 @@
             </div>
         </div>
         <!-- 解决方案示意 -->
-        <div class="py-20 bg-gradient-to-b from-white via-[#F8F7FF] to-white relative overflow-hidden">
+        <div class="py-20 bg-gradient-to-b from-white via-[#8e61f70d] to-white relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-4">
                 <h2 class="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-[#6838F0] to-[#9B7BF7]" style="font-family: 'Inter', sans-serif;">如何解决这些问题</h2>
                 <div class="flex justify-center items-center">
@@ -141,7 +141,7 @@
         </div>
         
         <!-- 两大标准 -->
-        <div class="py-20 bg-gradient-to-b from-white via-[#F8F7FF] to-white relative overflow-hidden">
+        <div class="py-20 bg-gradient-to-b from-white via-[#8e61f70d] to-white relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-4">
                 <h2 class="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-[#6838F0] to-[#9B7BF7]"
                     style="font-family: 'Inter', sans-serif;">两大核心框架，支撑企业软件安全治理落地</h2>
