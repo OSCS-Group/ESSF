@@ -71,8 +71,13 @@
         <!-- 三大核心问题 -->
         <div class="py-20 bg-gradient-to-b from-white via-[#8e61f70d] to-white relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-[#6838F0] to-[#9B7BF7]"
-                    style="font-family: 'Inter', sans-serif;">企业软件安全面临的三大核心问题</h2>
+                <h2 id="core-problems" class="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-[#6838F0] to-[#9B7BF7] relative group"
+                    style="font-family: 'Inter', sans-serif;">
+                    企业软件安全面临的三大核心问题
+                    <a href="#core-problems" class="anchor-link opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100" aria-hidden="true">
+                        <i class="i-carbon-link text-[#6838F0] text-xl"></i>
+                    </a>
+                </h2>
                 <div class="space-y-16 relative">
                     <!-- 背景装饰 -->
                     <div
@@ -108,7 +113,13 @@
         <!-- 解决方案示意 -->
         <div class="py-20 bg-gradient-to-b from-white via-[#8e61f70d] to-white relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-[#6838F0] to-[#9B7BF7]" style="font-family: 'Inter', sans-serif;">如何解决这些问题</h2>
+                <h2 id="solution" class="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-[#6838F0] to-[#9B7BF7] relative group" 
+                    style="font-family: 'Inter', sans-serif;">
+                    如何解决这些问题
+                    <a href="#solution" class="anchor-link opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100" aria-hidden="true">
+                        <i class="i-carbon-link text-[#6838F0] text-xl"></i>
+                    </a>
+                </h2>
                 <div class="flex justify-center items-center">
                     <img 
                       src="/img/solution.png" 
@@ -137,17 +148,22 @@
         
         <!-- 安全量化管理指标体系 -->
         <div class="py-20">
-          <SecurityIndicators v-if="isBrowser" />
+          <SecurityIndicators v-if="isBrowser" id="security-indicators" class="relative" />
         </div>
         
         <!-- 两大标准 -->
         <div class="py-20 bg-gradient-to-b from-white via-[#8e61f70d] to-white relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-[#6838F0] to-[#9B7BF7]"
-                    style="font-family: 'Inter', sans-serif;">两大核心框架，支撑企业软件安全治理落地</h2>
+                <h2 id="frameworks" class="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-[#6838F0] to-[#9B7BF7] relative group"
+                    style="font-family: 'Inter', sans-serif; z-index: 10;">
+                    两大核心框架，支撑企业软件安全治理落地
+                    <a href="#frameworks" class="anchor-link opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100" aria-hidden="true">
+                        <i class="i-carbon-link text-[#6838F0] text-xl"></i>
+                    </a>
+                </h2>
                 <!-- 背景装饰 -->
                 <div
-                    class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDBNIDAgMjAgTCA0MCAyMCBNIDIwIDAgTCAyMCA0MCBNIDAgMzAgTCA0MCAzMCBNIDMwIDAgTCAzMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDEwNCw1NiwyNDAsMC4xNSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnP')]">
+                    class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDBNIDAgMjAgTCA0MCAyMCBNIDIwIDAgTCAyMCA0MCBNIDAgMzAgTCA0MCAzMCBNIDMwIDAgTCAzMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDEwNCw1NiwyNDAsMC4xNSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnP')]" style="pointer-events: none; z-index: 1;">
                 </div>
                 <div class="grid grid-cols-2 gap-24">
                     <div v-for="(standard, index) in standards" :key="index"
@@ -174,9 +190,14 @@
         </div>
     </div>
     <!-- 贡献者 -->
-    <div class="py-32 bg-white">
+    <div class="pt-32 bg-white">
         <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-16">核心贡献者</h2>
+            <h2 id="contributors" class="text-3xl font-bold text-center mb-16 relative group">
+                核心贡献者
+                <a href="#contributors" class="anchor-link opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100" aria-hidden="true">
+                    <i class="i-carbon-link text-[#6838F0] text-xl"></i>
+                </a>
+            </h2>
             <div class="grid grid-cols-4 gap-8 mb-16">
                 <div v-for="contributor in contributors" :key="contributor.id"
                     class="text-center p-6 rounded-lg hover:bg-[#F8F7FF] transition-colors">
@@ -242,6 +263,17 @@ onMounted(() => {
     
     // 设置isBrowser为true，表示现在是客户端环境
     isBrowser.value = true
+
+    // 处理URL锚点
+    setTimeout(() => {
+        const hash = window.location.hash
+        if (hash) {
+            const element = document.querySelector(hash)
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            }
+        }
+    }, 300) // 给一点延迟确保页面完全渲染
 })
 
 const problems = [
@@ -289,6 +321,7 @@ const contributors = [
     { id: 8, name: '程岩', organization: '蚂蚁集团' },
     { id: 9, name: '刘月胜', organization: '小米' },
     { id: 10, name: '张煜昆', organization: '理想汽车' },
+    { id: 11, name: '罗棋琛', organization: 'Shein' },
 ]
 
 const companies = [
@@ -401,5 +434,18 @@ const closeImagePreview = () => {
     100% {
         background-position: 0% 50%;
     }
+}
+
+/* 锚点链接样式 */
+.anchor-link {
+    position: absolute;
+    margin-left: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+h2 .anchor-link {
+    top: 50%;
+    transform: translateY(-50%);
 }
 </style>

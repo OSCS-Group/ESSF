@@ -243,6 +243,16 @@ function sidebarESCTDetail(): DefaultTheme.SidebarItem[] {
   ]
 }
 
+// 能力分类侧边栏配置
+function sidebarTSCS(): DefaultTheme.SidebarItem[] {
+  return [
+    {
+      text: '软件安全目标能力集合',
+      link: '/TSCS/'
+    }
+  ]
+}
+
 export default defineConfig({
   title: "ESSF",
   description: "企业软件安全治理框架",
@@ -263,13 +273,15 @@ export default defineConfig({
         text: '文档', items: [
           { text: '成分分类文档', link: '/ESCT/' },
           { text: '威胁分类文档', link: '/ESTT/' },
+          { text: '能力分类文档', link: '/TSCS/' },
         ]
       },
     ],
 
     sidebar: {
       '/ESTT/': sidebarESTTDetail(),
-      '/ESCT/': sidebarESCTDetail()
+      '/ESCT/': sidebarESCTDetail(),
+      '/TSCS/': sidebarTSCS()
     },
 
     footer: {

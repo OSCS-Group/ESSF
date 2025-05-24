@@ -1,7 +1,12 @@
 <template>
   <div class="max-w-7xl mx-auto px-4 py-16 relative">
-    <h2 class="text-5xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-[#6838F0] to-[#9B7BF7]"
-      style="font-family: 'Inter', sans-serif;">软件安全量化管理指标体系</h2>
+    <h2 class="text-5xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-[#6838F0] to-[#9B7BF7] relative group"
+      style="font-family: 'Inter', sans-serif;">
+      软件安全量化管理指标体系
+      <a href="#security-indicators" class="anchor-link opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100" aria-hidden="true">
+        <i class="i-carbon-link text-[#6838F0] text-xl"></i>
+      </a>
+    </h2>
     
     <!-- 核心指标卡片 - 以CRI为中心 -->
     <div class="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8">
@@ -388,5 +393,18 @@ const toggleSaiDetails = () => {
 
 .min-w-8 {
   min-width: 2rem;
+}
+
+/* 锚点链接样式 - 如果已存在则不需要重复添加 */
+.anchor-link {
+  position: absolute;
+  margin-left: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+h2 .anchor-link {
+  top: 50%;
+  transform: translateY(-50%);
 }
 </style> 
