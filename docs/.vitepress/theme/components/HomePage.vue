@@ -311,10 +311,10 @@ const standards = [
 ]
 
 const contributors = [
-    { id: 1, name: '郑洲豪', organization: '国泰海通' },
-    { id: 2, name: '章华鹏', organization: '墨菲安全' },
-    { id: 3, name: '欧阳强斌', organization: '墨菲安全' },
-    { id: 4, name: '车志远', organization: '墨菲安全' },
+    { id: 1, name: '章华鹏', organization: '墨菲安全' },
+    { id: 2, name: '欧阳强斌', organization: '墨菲安全' },
+    { id: 3, name: '车志远', organization: '墨菲安全' },
+    { id: 4, name: '郑洲豪', organization: '国泰海通' },
     { id: 5, name: '胡斯诺', organization: '京东' },
     { id: 6, name: '何为舟', organization: '美团' },
     { id: 7, name: '程岩', organization: '蚂蚁集团' },
@@ -322,9 +322,9 @@ const contributors = [
     { id: 9, name: '张煜昆', organization: '理想汽车' },
     { id: 10, name: '李文瑞', organization: '字节跳动' },
     { id: 11, name: '罗棋琛', organization: 'Shein' },
-    { id: 12, name: '吕硕', organization: '墨菲安全' },
-    { id: 13, name: '刁程扬', organization: '墨菲安全' },
-    { id: 14, name: '汪昱', organization: '快手' },
+    { id: 12, name: '汪昱', organization: '快手' },
+    { id: 13, name: '吕硕', organization: '墨菲安全' },
+    { id: 14, name: '刁程扬', organization: '墨菲安全' },
 ]
 
 const companies = [
